@@ -25,6 +25,10 @@ body.body-index {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/index-背景.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .container-index {
