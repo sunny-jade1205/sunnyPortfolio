@@ -1,18 +1,25 @@
 * {
-    background-color: darkgrey;
+    background-color: transparent;
     margin: 0;
     padding: 0;
 }
 
-p,
-a,
-i {
-    background-color: transparent;
+p {
+    color: #275277;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FFFFFF
+        /* 點擊後仍然是黑色 */
 }
 
 li {
-    background-color: transparent;
-
+    list-style-position: outside;
+    color: #275277;
 }
 
 button:hover {
@@ -26,16 +33,20 @@ body.body-index {
     justify-content: center;
     height: 100vh;
     background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/index-背景.jpg);
-    background-size:contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .container-index {
-    background-color: chocolate;
+    background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/infoBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: grid;
+    aspect-ratio: 2/1;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
     grid-template-areas:
         "myPhoto intro intro"
         "myPhoto intro intro "
@@ -45,30 +56,44 @@ body.body-index {
 
 .container-index .myPhoto {
     grid-area: myPhoto;
-    background-color: aquamarine;
+    margin: auto 0;
 }
 
 .container-index .myPhoto img {
     display: flex;
     justify-self: center;
-    width: 15vw;
+    max-width: 100%;
     height: auto;
     vertical-align: bottom;
     border-radius: 50%;
+
 }
 
 .container-index .myName {
     grid-area: myName;
-    background-color: cornflowerblue;
     text-align: center;
-    vertical-align: bottom;
+    line-height: 2;
+    color: #FFFFFF;
     margin: auto 0;
+    background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/nameBackground.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-index .myName p {
+    color: #FFFFFF;
 }
 
 .container-index .intro {
     grid-area: intro;
-    background-color: bisque;
-    margin: auto 10%;
+    margin: auto 5%;
+    color: #275277;
+}
+
+.container-index .intro li {
+    text-indent: -20px;
+    padding-left: 20px;
 }
 
 .container-index .empty {
@@ -77,25 +102,35 @@ body.body-index {
 
 .container-index .button-coding {
     grid-area: button-coding;
-    background-color: brown;
+    line-height: 4;
+    background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/buttonBackground.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: auto 0;
-    text-align: end;
+    text-align: center;
+    color: #FFFFFF;
+
 }
 
 .container-index .button-live2D {
     grid-area: button-live2D;
-    background-color: brown;
+    line-height: 4;
+    background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/buttonBackground.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: auto 0;
-    text-align: end;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 /* -------------------------------------------- page1 & page2 ------------------------------------------------------- */
 
 .bar {
-    background-color: darkolivegreen;
+    background-color: #275277;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
     grid-template-areas:
         "goBackPage pageTitle icon"
     ;
@@ -103,6 +138,7 @@ body.body-index {
 
 .goBackPage {
     grid-area: goBackPage;
+    margin: auto 0;
 }
 
 .goBackPage a {
@@ -114,21 +150,27 @@ body.body-index {
     grid-area: pageTitle;
     text-align: center;
     font-size: 32px;
-    margin: 5% 0;
+    margin: auto 0;
+}
+.pageTitle p{
+    color: #FFFFFF;
 }
 
 .icon {
     grid-area: icon;
+    margin: auto 0;
 }
 
 /* -------------------------------------------- page1 ------------------------------------------------------- */
 
+
 .container-page1 .group {
     display: grid;
-    margin: 5% 15%;
-    background-color: rgb(107, 69, 100);
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: min-content min-content min-content min-content min-content min-content;
+    margin: 0 15%;
+    padding: 3% 5% 0 5%;
+    background-color: #D3E6F6;
+    grid-template-columns: 1fr 1.7fr;
+    grid-template-rows: min-content min-content min-content min-content 1fr 1fr;
     grid-template-areas:
         "artName artImg"
         "artTag artImg"
@@ -139,68 +181,78 @@ body.body-index {
     ;
 }
 
+.container-page1 .group li {
+    text-indent: -22px;
+    padding-left: 22px;
+}
+
 .container-page1 .artName {
     grid-area: artName;
-    background-color: blue;
 }
 
 .container-page1 .artName img {
-    width: 20vw;
+    max-width: 100%;
+    width: 100%;
     height: auto;
     vertical-align: bottom;
 }
 
 .container-page1 .artTag {
     grid-area: artTag;
-    background-color: cadetblue;
 }
 
 .container-page1 .artMember {
     grid-area: artMember;
-    background-color: brown;
 }
 
 .container-page1 .artTeacher {
     grid-area: artTeacher;
-    background-color: chocolate;
+    margin-bottom: 3%;
 }
 
 .container-page1 .artIntro {
     grid-area: artIntro;
-    margin-top: 10%;
-    background-color: chartreuse;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.container-page1 .artIntro p {
+    text-indent: 32px;
+    margin-bottom: 10%;
 }
 
 .container-page1 .artImg {
     grid-area: artImg;
-    margin-left: 3%;
-    background-color: blueviolet;
+    margin-left: 5%;
+    margin-bottom: 3%;
 }
 
 .container-page1 .artImg img {
-    width: 40vw;
+    max-width: 100%;
     height: auto;
     vertical-align: bottom;
 }
 
 .container-page1 .artVideo {
     grid-area: artVideo;
-    margin-top: 5%;
-    margin-left: 3%;
-    background-color: darkkhaki;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 .container-page1 .artVideo iframe {
-    width: 40vw;
-    height: 50vh;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 35vh;
 }
 
 /* -------------------------------------------- page2 ------------------------------------------------------- */
 
 .container-page2 .group {
     display: grid;
-    margin: 5% 15%;
-    background-color: rgb(107, 69, 100);
+    margin: 0 15%;
+    padding: 3% 5% 0 5%;
+    background-color: #D3E6F6;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: min-content min-content 1fr;
     grid-template-areas:
@@ -212,11 +264,13 @@ body.body-index {
 
 .container-page2 .artName {
     grid-area: artName;
-    background-color: blue;
+    padding: 0 40% 0 0;
+    margin-bottom: 5%;
 }
 
 .container-page2 .artName img {
-    width: 15vw;
+    max-width: 100%;
+    width: 100%;
     height: auto;
     vertical-align: bottom;
     border-radius: 50%;
@@ -224,36 +278,38 @@ body.body-index {
 
 .container-page2 .artMember {
     grid-area: artMember;
-    margin-top: 5%;
-    background-color: brown;
+    margin-bottom: 5%;
 }
 
 .container-page2 .artIntro {
     grid-area: artIntro;
-    margin-top: 10%;
-    background-color: chartreuse;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.container-page2 .artIntro p {
+    text-indent: 35px;
 }
 
 .container-page2 .artImg {
     grid-area: artImg;
-    margin-left: 3%;
-    background-color: blueviolet;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 .container-page2 .artImg img {
-    width: 40vw;
+    max-width: 100%;
     height: auto;
     vertical-align: bottom;
 }
 
 .container-page2 .artVideo {
     grid-area: artVideo;
-    margin-top: 5%;
-    margin-left: 3%;
-    background-color: darkkhaki;
+    margin-left: 5%;
 }
 
 .container-page2 .artVideo iframe {
-    width: 40vw;
+    max-width: 100%;
+    width: 100%;
     height: 50vh;
 }
