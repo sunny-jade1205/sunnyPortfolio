@@ -416,6 +416,14 @@ iframe {
     height: auto;
 }
 
+.hamburger {
+    display: none;
+}
+
+.hamburgerContent {
+    display: none;
+}
+
 /* -------------------------------------------- index ------------------------------------------------------- */
 body.body-index {
     display: flex;
@@ -534,6 +542,7 @@ body.body-index {
 /* -------------------------------------------- page1 & page2 ------------------------------------------------------- */
 
 .bar {
+    height: 10vh;
     background-color: #275277;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -565,7 +574,7 @@ body.body-index {
 
 .bar .icon {
     grid-area: icon;
-    margin: auto 0;
+    margin: auto 5%;
     display: flex;
     justify-content: end;
 }
@@ -814,6 +823,145 @@ body.body-index {
 }
 
 /* ---------------------------------------------響應式設定--------------------------------------------- */
+
+/* ----------------手機---------------- */
+@media screen and (max-width:767px) {
+    .body-page1 {
+        position: relative;
+    }
+
+    .bar .goBackPage,
+    .bar .icon {
+        display: none;
+    }
+
+    .bar .hamburger {
+        display: grid;
+        margin: 5% 10%;
+        font-size: 36px;
+        color: #FFFFFF;
+    }
+
+    .bar .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .bar .hamburger:hover .hamburgerContent,.bar .hamburger .hamburgerContent:hover {
+        display: grid;
+        position: absolute;
+        top: 10vh;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 5%;
+        border: 3px solid #275277;
+        width: 30vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content;
+        grid-template-areas:
+            "hamburgerLink"
+            "hamburgerCatalog"
+            "hamburgerIcon"
+        ;
+    }
+
+    .bar .hamburger .hamburgerContent p,
+    .bar .hamburger .hamburgerContent a {
+        color: #275277;
+    }
+
+    .bar .hamburger .hamburgerContent .link {
+        grid-area: hamburgerLink;
+        margin: 20% 5% 20% 5%;
+        background-image: url(https://raw.githubusercontent.com/sunny-jade1205/sunnyPortfolio/main/img/index/nameBackground2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+
+
+    }
+
+    .bar .hamburger .hamburgerContent .link a {
+        color: #FFFFFF;
+        line-height: 2;
+    }
+
+    .bar .hamburger .hamburgerContent .catalog {
+        grid-area: hamburgerCatalog;
+        margin-left: 10%;
+        margin-bottom: 20%;
+
+    }
+
+    .bar .hamburger .hamburgerContent p {
+
+        text-indent: 0;
+        padding-left: 0;
+    }
+
+    .bar .hamburger .hamburgerContent li {
+        list-style-position: inside;
+        line-height: 1.5;
+        text-indent: 0;
+        padding-left: 0;
+        margin-bottom: 2%;
+    }
+
+    .bar .hamburger .hamburgerContent .icon {
+        display: flex;
+        grid-area: hamburgerIcon;
+        font-size: 14px;
+        margin: 0;
+        justify-content: center;
+        margin-bottom: 20%;
+    }
+    .bar .hamburger .hamburgerContent .icon a{
+        margin: auto 5%;
+    }
+    .container-page1 .art {
+        margin: auto 10%;
+    }
+
+    .container-page1 .group .artInform .artImg,
+    .container-page1 #art2 .artImg {
+        display: flex;
+        margin-left: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-page1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "art"
+        ;
+    }
+
+    .container-page1 .catalog {
+        display: none;
+    }
+
+    .container-page1 .group .artInform,
+    .container-page1 #art2 .artInform {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content min-content min-content min-content;
+        grid-template-areas:
+            "artName"
+            "artTag"
+            "artTool"
+            "artMember"
+            "artTeacher"
+            "artImg"
+        ;
+    }
+}
+
+/* ----------------平板---------------- */
+
+/* ----------------桌機---------------- */
 @media screen and (min-width:1200px) {
     .container-page1 .group .artInform {
         margin-bottom: 5%;
